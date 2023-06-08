@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { writeJsonData } from './writeData.js';
-import Publicodes, { reduceAST } from 'publicodes';
+import Engine, { reduceAST } from 'publicodes';
 import { parse } from 'yaml';
 
 import communes from '../lib/data/communes.json' assert { type: 'json' };
@@ -10,7 +10,7 @@ import regions from '@etalab/decoupage-administratif/data/regions.json' assert {
 
 const sourceRules = fs.readFileSync(new URL('../aides.yaml', import.meta.url).pathname, 'utf8');
 
-const engine = new Publicodes(parse(sourceRules));
+const engine = new Engine(parse(sourceRules));
 
 const aidesRuleNames = Object.keys(engine.getParsedRules()).filter(
 	(ruleName) => ruleName.startsWith('aides .') && engine.getRule(ruleName).rawNode.titre

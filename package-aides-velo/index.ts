@@ -1,4 +1,4 @@
-import Publicodes from 'publicodes';
+import Engine from 'publicodes';
 import aides from '../src/aides.yaml';
 import aidesAndCollectivities from '$lib/data/aides-collectivities.json';
 import { formatDescription } from '$lib/utils';
@@ -38,7 +38,7 @@ type InputParameters = Partial<{
 	'revenu fiscal de référence': number;
 }>;
 
-const engine = new Publicodes(aides as any);
+const engine = new Engine(aides as any);
 
 /**
  *  Retourne la liste des aides disponibles pour une situation donnée
