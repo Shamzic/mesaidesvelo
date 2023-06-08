@@ -1,6 +1,6 @@
 {
   "name": "mesaidesvelo-shamzic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "postinstall": "node ./src/scripts/postinstall.js",
     "dev": "VITE_SITE=mesaidesvelo.fr vite dev",
